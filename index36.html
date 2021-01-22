@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+ 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadatak SAT</title> 
+     
+    <style>  
+   
+     
+    </style>
+    </head>
+    
+    <body> 
+    
+        <canvas id="my-canvas" width="800" height="300">
+            
+        </canvas>
+           <script> 
+            
+            window.onload = init;
+        function init() {
+            let myCanvas = document.getElementById("my-canvas");
+ 
+            if (myCanvas.getContext) {
+ 
+                let ctx = myCanvas.getContext('2d');  
+                 
+                update(ctx);
+                 
+                
+            } else {
+                alert("Canvas is not supported.");
+            }
+        } 
+             let angle = 0
+            function update(ctx) {  
+                 
+                ctx.save(); 
+                 
+                ctx.clearRect(0, 0, 400, 300);
+
+                ctx.beginPath();
+                ctx.fillStyle = '#574C4D'; 
+                ctx.shadowOffsetX = 3;
+                ctx.shadowOffsetY = 4;
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+                ctx.rect(225, 60, 350, 50)
+                ctx.fill(); 
+
+                ctx.beginPath();
+                ctx.fillStyle = '#734E46'; 
+                ctx.shadowOffsetX = 3;
+                ctx.shadowOffsetY = 4;
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.4)'; 
+                ctx.rect(225, 170, 350, 50)
+                ctx.fill(); 
+                  
+                
+                 
+
+                ctx.beginPath(); 
+                ctx.fillStyle = '#A9BC86';
+                ctx.arc(400, 150, 120, 0, 2 * Math.PI);              
+                ctx.moveTo(360, 170);
+                ctx.lineTo(400, 140);               
+                ctx.moveTo(385, 220);
+                ctx.lineTo(400, 140); 
+                ctx.moveTo(450, 200);
+                ctx.lineTo(400, 140);  
+                ctx.fill();     
+                 
+                ctx.font = 'bold 26px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('12', 383, 70); 
+                ctx.font = 'bold 26px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('6', 390, 250); 
+                ctx.font = 'bold 26px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('3', 490, 152);   
+                ctx.font = 'bold 26px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('9', 295, 152); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 318, 106); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 350, 77); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 438, 77); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 470, 106); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 318, 183); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 350, 220); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 438, 220); 
+                ctx.font = 'bold 35px sans-serif';
+                ctx.fillStyle = "#4E5541";
+                ctx.fillText('.', 470, 183);
+                ctx.stroke();    
+            
+                
+               
+                ctx.restore();
+            angle++;
+            requestId = requestAnimationFrame(function () {
+                update(ctx);  
+            });
+
+
+            }
+            
+
+
+
+      </script>
+
+      </body>
+    
+    
+    </html>
